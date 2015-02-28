@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+// Mixins
+@import "components/prefixer";
+@import "components/mixins";
+@import "components/color";
+
+// Variables;
+@import "components/variables";
+
+// Reset
+@import "components/normalize";
+
+// components
+@import "components/global";
+@import "components/icons-material-design";
+@import "components/grid";
+@import "components/navbar";
+@import "components/roboto";
+@import "components/typography";
+@import "components/cards";
+@import "components/toast";
+@import "components/tabs";
+@import "components/tooltip";
+@import "components/buttons";
+@import "components/dropdown";
+@import "components/waves";
+@import "components/modal";
+@import "components/collapsible";
+@import "components/materialbox";
+@import "components/form";
+@import "components/table_of_contents";
+@import "components/sideNav";
+@import "components/preloader";
+@import "components/slider";
+@import "components/date_picker/default.scss";
+@import "components/date_picker/default.date.scss";
+@import "components/date_picker/default.time.scss";
+
+@font-face {
+    font-family: "Material-Design-Icons";
+    src:url('/fonts/Material-Design-Icons.eot');
+    src:url('/fonts/Material-Design-Icons.eot?#iefix') format("embedded-opentype"),
+        url('/fonts/Material-Design-Icons.woff') format("woff"),
+        url('/fonts/Material-Design-Icons.ttf') format("truetype"),
+        url('/fonts/Material-Design-Icons.svg') format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// GENERAL CSS --------------------------------------------
+// ---------------------------------------------------------
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-fixed {
+    position: fixed;
+}
+
+// HOMEPAGE CSS --------------------------------------------
+// ---------------------------------------------------------
+.home-container {
+    height: 100%;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    background: url('/images/wallpaper-2177374.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    h1, h5 {
+        color: #FFF;
+    }
+
+}
+
+.fp-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
