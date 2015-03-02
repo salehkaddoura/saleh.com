@@ -16,7 +16,6 @@
 @import "components/icons-material-design";
 @import "components/grid";
 @import "components/navbar";
-@import "components/roboto";
 @import "components/typography";
 @import "components/cards";
 @import "components/toast";
@@ -48,13 +47,41 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "Roboto";
+    src: url('/fonts/Roboto-Thin.ttf');
+    font-weight: 200;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url('/fonts/Roboto-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('/fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('/fonts/Roboto-Medium.ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('/fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+}
 
 // GENERAL CSS --------------------------------------------
 // ---------------------------------------------------------
-// html, body {
-//     height: 100%;
-//     width: 100%;
-// }
+html,body{ 
+    width:100%;
+    height:100%;
+}
 
 .navbar-fixed {
     position: fixed;
@@ -62,13 +89,21 @@
 
 nav {
     background: transparent;
-}
-//remove canvas default margin */
-html,body{ 
-    width:100%;
-    height:100%;
+    box-shadow: none;
+    
+    .brand-logo {
+        font-family: 'Roboto';
+        font-weight: 200;
+    }
+
+    ul a {
+        font-family: 'Roboto';
+        font-weight: 200;
+        text-transform: uppercase;
+    }
 }
 
+// PARTICLE.JS
 //remove canvas default margin */
 canvas{
     display:block;
@@ -103,6 +138,12 @@ canvas{
 
     h1, h5 {
         color: #FFF;
+        font-family: 'Roboto';
+        font-weight: 300;
+    }
+
+    h5 {
+        font-weight: 200;
     }
 
 }
@@ -129,6 +170,16 @@ canvas{
     h1, h5 {
         color: #FFF;
     } 
+}
+
+.sk-about-wrap {
+}
+.sk-about {
+    font-size: 20px;
+    font-weight: 300;
+    color: #FFF;
+    opacity: 1;
+    padding: 0 30px;
 }
 
 
