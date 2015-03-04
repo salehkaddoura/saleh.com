@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "saleh.io",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website for saleh kaddoura",
   "main": "server.js",
   "author": "Saleh Kaddoura",
   "private": true,
