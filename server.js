@@ -16,7 +16,8 @@ if ('development' == app.get('env')) {
 }
 
 if ('production' == app.get('env')) {
-    app.use(express.static(__dirname + '/dist'));
+    app.use(express.static(__dirname + '/app'));
+    app.use(express.static(__dirname + '/.tmp'));
 }
 
 app.get('/', function(req, res) {
