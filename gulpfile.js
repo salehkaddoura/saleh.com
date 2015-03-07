@@ -41,13 +41,13 @@ var AUTOPREFIXER_BROWSERS = [
 ];
 
 // Lint JavaScript
-// gulp.task('jshint', function () {
-//   return gulp.src('app/scripts/**/*.js')
-//     .pipe(reload({stream: true, once: true}))
-//     .pipe($.jshint())
-//     .pipe($.jshint.reporter('jshint-stylish'))
-//     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-// });
+gulp.task('jshint', function () {
+  return gulp.src('app/scripts/**/*.js')
+    .pipe(reload({stream: true, once: true}))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'));
+    // .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+});
 
 // Optimize Images
 gulp.task('images', function () {
@@ -79,6 +79,12 @@ gulp.task('fonts', function () {
     .pipe($.size({title: 'fonts'}));
 });
 
+gulp.task('js', function() {
+  return gulp.src(['app/scripts/*.js'])
+    .pipe(gulp.dest('dist/scripts'))
+    .pipe($.size({title: 'js'}));
+});
+
 // Compile and Automatically Prefix Stylesheets
 gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
@@ -89,9 +95,9 @@ gulp.task('styles', function () {
   ])
     .pipe($.changed('styles', {extension: '.scss'}))
     .pipe($.sass({
-      precision: 10
+      precision: 10,
+      onError: console.error.bind(console, 'Sass error:')
     }))
-    .on('error', console.error.bind(console))
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
@@ -153,6 +159,7 @@ gulp.task('serve', ['styles'], function () {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
+  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
 });
 
@@ -171,19 +178,19 @@ gulp.task('serve:dist', ['default'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['html', 'images', 'fonts', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'js', 'copy'], cb);
 });
 
 // Run PageSpeed Insights
-// Update `url` below to the public URL for your site
-gulp.task('pagespeed', pagespeed.bind(null, {
-  // By default, we use the PageSpeed Insights
-  // free (no API key) tier. You can use a Google
-  // Developer API key if you have one. See
-  // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
-  url: 'https://example.com',
-  strategy: 'mobile'
-}));
+gulp.task('pagespeed', function (cb) {
+  // Update the below URL to the public URL of your site
+  pagespeed.output('example.com', {
+    strategy: 'mobile',
+    // By default we use the PageSpeed Insights free (no API key) tier.
+    // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
+    // key: 'YOUR_API_KEY'
+  }, cb);
+});
 
 // Load custom tasks from the `tasks` directory
-// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
+// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }FF
