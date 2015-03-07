@@ -6,7 +6,8 @@
   "author": "Saleh Kaddoura",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "gulp"
   },
   "dependencies": {
     "browser-sync": "^1.3.0",
