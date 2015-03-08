@@ -40,7 +40,7 @@ particlesJS('particles-js', {
     }
   },
   interactivity: {
-    enable: true,
+    enable: false,
     mouse: {
       distance: 300
     },
@@ -51,13 +51,13 @@ particlesJS('particles-js', {
     },
     events: {
       onclick: {
-        enable: true,
+        enable: false,
         mode: 'push', // "push" or "remove"
         nb: 4
       },
       onresize: {
         enable: true,
-        mode: 'out', // "out" or "bounce"
+        mode: 'bounce', // "out" or "bounce"
         density_auto: true
         // density_area: 800 // nb_particles = particles.nb * (canvas width *  canvas height / 1000) / density_area
       }
