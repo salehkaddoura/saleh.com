@@ -198,11 +198,18 @@ canvas{
     display: table;
     table-layout: fixed;
     // position: relative;
-    background: url('/images/wallhaven-49594.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; 
+    // background: url('/images/trianglify-bg.svg') no-repeat center center fixed;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover; 
+
+  background: -webkit-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:    -moz-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:     -ms-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:      -o-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  background:         linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+        
     
 
     h1, h5 {
@@ -210,6 +217,16 @@ canvas{
     } 
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+// STYLE GOES HERE 
+    .name-header {
+        font-size: 2.9rem;
+    }
+
+    .developer-icons p {
+        font-size: 19px;
+    }
+}
 
 
 
