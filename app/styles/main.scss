@@ -118,11 +118,7 @@ canvas{
     right: 0;
     left: 0;
     bottom: 0;
-    background: url('/images/wallpaper-2433075.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    z-index: 0;
 }
 
 
@@ -132,7 +128,12 @@ canvas{
     height: 100%;
     width: 100%;
     display: table;
-    table-layout: fixed;
+    // table-layout: fixed;
+     background: url('/images/wallpaper-2433075.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     // position: relative;
     
 
@@ -196,7 +197,7 @@ canvas{
     height: 100%;
     width: 100%;
     display: table;
-    table-layout: fixed;
+    // table-layout: fixed;
     // position: relative;
     // background: url('/images/trianglify-bg.svg') no-repeat center center fixed;
     // -webkit-background-size: cover;
