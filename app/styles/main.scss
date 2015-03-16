@@ -129,12 +129,13 @@ canvas{
     width: 100%;
     display: table;
     // table-layout: fixed;
-     background: url('/images/wallpaper-2433075.jpg') no-repeat center center fixed;
+    background: url('/images/wallpaper-2433075.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     // position: relative;
+    z-index: 5;
     
 
     h1, h5 {
@@ -166,7 +167,15 @@ canvas{
 
 .social-icons a {
     color: #FFF;
+
+    i:hover {
+        -moz-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -o-transform:scale(1.2);
+        transform: scale(1.2);
+    }
 }
+
 
 .developer-icons span {
     font-size: 3em;
@@ -226,6 +235,10 @@ canvas{
 
     .developer-icons p {
         font-size: 19px;
+    }
+
+    #particles-js {
+        display: none;
     }
 }
 
