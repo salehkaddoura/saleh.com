@@ -33,6 +33,7 @@
     "gulp-useref": "^1.0.1",
     "hbs": "^2.9.0",
     "jshint-stylish": "^1.0.0",
+    "newrelic": "^1.19.0",
     "opn": "^1.0.0",
     "psi": "^1.0.4",
     "require-dir": "^0.1.0",
