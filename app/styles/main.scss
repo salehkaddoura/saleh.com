@@ -118,6 +118,7 @@ canvas{
     height: 100%;
     width: 100%;
     display: table;
+    position: relative;
     // table-layout: fixed;
     background: url('/images/wallpaper-2433075.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -207,35 +208,25 @@ canvas{
 }
 
 .project-container {
-    // height: 100%;
-    // width: 100%;
-    // display: table;
     height: 100%;
     width: 100%;
+    position: relative;
     background: url('/images/wallpaper-966796.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    // table-layout: fixed;
-    // position: relative;
-    // background: url('/images/trianglify-bg.svg') no-repeat center center fixed;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // background-size: cover; 
+    padding-top: 70px;
+}
 
-  // background: -webkit-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  // background:    -moz-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  // background:     -ms-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  // background:      -o-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  // background:         linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-        
-    
-
-    h1, h5 {
-        color: #FFF;
-    } 
+.under-construction {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: #FFF;
+    opacity: 0.8;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
