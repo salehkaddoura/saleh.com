@@ -22,7 +22,7 @@
     // white-space: nowrap;
     // outline: 0;
 
-    // vertical-align: middle;
+    vertical-align: middle;
     // cursor: pointer;
     // border: none;
     // outline: none;
@@ -82,6 +82,15 @@
     }
     &.waves-teal .waves-ripple {
       background-color: rgba(0, 150, 136, 0.70);
+    }
+
+    // Style input button bug.
+    input[type="button"], input[type="reset"], input[type="submit"] {
+        border: 0;
+        font-style: normal;
+        font-size: inherit;
+        text-transform: inherit;
+        background: none;
     }
 
 }

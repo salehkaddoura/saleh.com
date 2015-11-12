@@ -4,7 +4,7 @@ var app = express();
 var path = require('path');
 var errorHandler = require('errorhandler')
 var port = process.env.PORT || 8080;
-process.env.NODE_ENV = 'development';
+// process.env.NODE_ENV = 'development';
 
 app.set('views', __dirname + '/app');
 app.set('view engine', 'html');

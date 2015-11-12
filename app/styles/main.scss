@@ -13,9 +13,9 @@
 
 // components
 @import "components/global";
-@import "components/icons-material-design";
 @import "components/grid";
 @import "components/navbar";
+@import "components/roboto";
 @import "components/typography";
 @import "components/cards";
 @import "components/toast";
@@ -26,6 +26,7 @@
 @import "components/waves";
 @import "components/modal";
 @import "components/collapsible";
+@import "components/chips";
 @import "components/materialbox";
 @import "components/form";
 @import "components/table_of_contents";
@@ -35,17 +36,6 @@
 @import "components/date_picker/default.scss";
 @import "components/date_picker/default.date.scss";
 @import "components/date_picker/default.time.scss";
-
-@font-face {
-    font-family: "Material-Design-Icons";
-    src:url('/fonts/Material-Design-Icons.eot');
-    src:url('/fonts/Material-Design-Icons.eot?#iefix') format("embedded-opentype"),
-        url('/fonts/Material-Design-Icons.woff') format("woff"),
-        url('/fonts/Material-Design-Icons.ttf') format("truetype"),
-        url('/fonts/Material-Design-Icons.svg') format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
 
 @font-face {
     font-family: "Roboto";
@@ -154,6 +144,7 @@ canvas{
 
 }
 
+
 .header-row {
     margin-bottom: 10px;
 }
@@ -177,15 +168,28 @@ canvas{
 }
 
 
-.developer-icons span {
-    font-size: 3em;
-    color: #FFF;
-}
+.developer-icons {
+    h4 {
+        color: #FFF;
+        font-weight: 200;
+    }
 
-.developer-icons p {
-    font-size: 20px;
-    font-weight: 200;
-    color: #FFF;
+    .stack {
+        display: inline-block;
+        margin: auto 15px;
+    }
+
+    .stack span {
+        font-size: 3em;
+        display: block;
+        color: #FFF;    
+    }
+
+    p {
+        font-size: 20px;
+        color: #FFF;
+        font-weight: 200;
+    }
 }
 
 .sk-about {
@@ -203,9 +207,16 @@ canvas{
 }
 
 .project-container {
+    // height: 100%;
+    // width: 100%;
+    // display: table;
     height: 100%;
     width: 100%;
-    display: table;
+    background: url('/images/wallpaper-966796.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     // table-layout: fixed;
     // position: relative;
     // background: url('/images/trianglify-bg.svg') no-repeat center center fixed;
@@ -214,11 +225,11 @@ canvas{
     // -o-background-size: cover;
     // background-size: cover; 
 
-  background: -webkit-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  background:    -moz-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  background:     -ms-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  background:      -o-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
-  background:         linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  // background: -webkit-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  // background:    -moz-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  // background:     -ms-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  // background:      -o-linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
+  // background:         linear-gradient(90deg, #43cea2 10%, #185a9d 90%); 
         
     
 
