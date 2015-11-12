@@ -111,6 +111,29 @@ canvas{
     z-index: 0;
 }
 
+// TYPED.JS
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
 
 // HOMEPAGE CSS --------------------------------------------
 // ---------------------------------------------------------
@@ -120,7 +143,7 @@ canvas{
     display: table;
     position: relative;
     // table-layout: fixed;
-    background: url('/images/wallpaper-2433075.jpg') no-repeat center center fixed;
+    background: url('/images/wallpaper-2433075.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -211,12 +234,13 @@ canvas{
     height: 100%;
     width: 100%;
     position: relative;
-    background: url('/images/wallpaper-966796.jpg') no-repeat center center fixed;
+    background: url('/images/wallpaper-966796.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     padding-top: 70px;
+    overflow: auto;
 }
 
 .under-construction {
@@ -227,6 +251,7 @@ canvas{
     height: 40px;
     background-color: #FFF;
     opacity: 0.8;
+    line-height: 1;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

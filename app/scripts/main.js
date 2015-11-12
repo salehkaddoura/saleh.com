@@ -17,7 +17,7 @@ particlesJS('particles-js', {
     color_random: false,
     shape: 'circle', // "circle", "edge" or "triangle"
     opacity: {
-      opacity: 0.7,
+      opacity: 0.6,
       anim: {
         enable: true,
         speed: 1.5,
@@ -25,14 +25,14 @@ particlesJS('particles-js', {
         sync: false
       }
     },
-    size: 3,
+    size: 4,
     size_random: true,
-    nb: 250,
+    nb: 225,
     line_linked: {
       enable_auto: true,
       distance: 100,
       color: '#FFF',
-      opacity: 1,
+      opacity: 0.9,
       width: 1,
       condensed_mode: {
         enable: false,
