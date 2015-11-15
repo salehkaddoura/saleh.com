@@ -73,6 +73,10 @@ html,body{
     height:100%;
 }
 
+.page-container {
+    position: relative;
+}
+
 .navbar-fixed {
     position: fixed;
 }
@@ -148,7 +152,6 @@ canvas{
     -o-background-size: cover;
     background-size: cover;
     z-index: 5;
-    
 
     h1, h5 {
         color: #FFF;
@@ -274,7 +277,7 @@ canvas{
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 // STYLE GOES HERE 
     .name-header {
-        font-size: 2.9rem;
+        font-size: 2.1rem;
     }
 
     .developer-icons p {
@@ -283,6 +286,18 @@ canvas{
 
     #particles-js {
         display: none;
+    }
+
+    .home-container {
+        padding: 60px 0;
+    }
+
+    .social-row {
+        bottom: -36px;
+    }
+
+    .project-container {
+        padding: 35px 0;
     }
 }
 
