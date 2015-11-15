@@ -142,13 +142,11 @@ canvas{
     width: 100%;
     display: table;
     position: relative;
-    // table-layout: fixed;
     background: url('/images/wallpaper-2433075.jpg') no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    // position: relative;
     z-index: 5;
     
 
@@ -230,6 +228,9 @@ canvas{
     position: relative;
 }
 
+
+// HOMEPAGE CSS --------------------------------------------
+// ---------------------------------------------------------
 .project-container {
     height: 100%;
     width: 100%;
@@ -252,6 +253,22 @@ canvas{
     background-color: #FFF;
     opacity: 0.8;
     line-height: 1;
+}
+
+.chip {
+    margin: 4px 4px 4px 0;
+
+    span {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .devicons {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1px;
+        font-size: 18px;
+    }
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {

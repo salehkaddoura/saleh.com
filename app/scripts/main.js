@@ -4,6 +4,17 @@ $(document).ready(function() {
 
 });
 
+$("#typed").typed({
+    strings: ["a Front End Engineer", "a Hacker", "Saleh"],
+    typeSpeed: 30,
+    callback: function(){
+        // lift();
+    }
+});
+// function lift(){
+//     $(".head-text").addClass("lift-text");
+// }
+
 /* default dom id (particles-js) */
 //particlesJS();
 
