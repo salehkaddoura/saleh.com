@@ -7,6 +7,7 @@ $(document).ready(function() {
 $("#typed").typed({
     strings: ["a Front End Engineer", "a Hacker", "Saleh"],
     typeSpeed: 30,
+    startDelay: 2000,
     callback: function(){
         // lift();
     }
