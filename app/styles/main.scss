@@ -263,6 +263,20 @@ canvas{
     }
 }
 
+.github-ribbon {
+    background-color: transparent;
+    background-image: url('/images/github.svg');
+    background-size: cover;
+    display: block;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    z-index: 5;
+    cursor: pointer;
+}
+
 .projects-row > h3 {
     color: #FFF;
     padding-bottom: 10px;
