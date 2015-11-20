@@ -3,12 +3,8 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
-
-# THANKS
-
-  <name>
+  <Saleh Kaddoura> -- <Creator> -- <@smilingArab>
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3
+  HTML5, CSS3, Javascript
