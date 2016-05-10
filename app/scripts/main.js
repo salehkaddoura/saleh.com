@@ -5,31 +5,26 @@ $(document).ready(function() {
 });
 
 $("#typed").typed({
-    strings: ["a Front End Engineer", "a Hacker", "Saleh"],
-    typeSpeed: 30,
+    strings: ["a developer", "a student", "Saleh"],
+    typeSpeed: 40,
     startDelay: 2000,
-    callback: function(){
-        // lift();
+    callback: function() {
+        lift();
     }
 });
-// function lift(){
-//     $(".head-text").addClass("lift-text");
-// }
 
-/* default dom id (particles-js) */
-//particlesJS();
+function lift(){
+    $(".header-container--h1").addClass("lift-text");
+    $(".header-container--p").addClass("show-text");
+}
 
-/* config dom id */
-//particlesJS('dom-id');
-
-/* config dom id (optional) + config particles params */
 particlesJS('particles-js', {
   particles: {
-    color: '#95a5a6',
+    color: '#fff',
     color_random: false,
     shape: 'circle', // "circle", "edge" or "triangle"
     opacity: {
-      opacity: 0.6,
+      opacity: 1,
       anim: {
         enable: true,
         speed: 1.5,
@@ -39,12 +34,12 @@ particlesJS('particles-js', {
     },
     size: 4,
     size_random: true,
-    nb: 225,
+    nb: 250,
     line_linked: {
       enable_auto: true,
       distance: 100,
-      color: '#FFF',
-      opacity: 0.9,
+      color: '#fff',
+      opacity: 1,
       width: 1,
       condensed_mode: {
         enable: false,
@@ -65,7 +60,7 @@ particlesJS('particles-js', {
     detect_on: 'canvas', // "canvas" or "window"
     mode: 'grab', // "grab" or false
     line_linked: {
-      opacity: .5
+      opacity: 0.5
     },
     events: {
       onclick: {
@@ -84,4 +79,3 @@ particlesJS('particles-js', {
   /* Retina Display Support */
   retina_detect: true
 });
-

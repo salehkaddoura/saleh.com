@@ -42,11 +42,11 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src('app/scripts/**/main.js')
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'));
-    // .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
 // Optimize Images
@@ -64,8 +64,7 @@ gulp.task('images', function () {
 gulp.task('copy', function () {
   return gulp.src([
     'app/*',
-    '!app/*.html',
-    'node_modules/apache-server-configs/dist/.htaccess'
+    '!app/*.html'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'))
@@ -80,7 +79,15 @@ gulp.task('fonts', function () {
 });
 
 gulp.task('js', function() {
-  return gulp.src(['app/scripts/*.js'])
+  return gulp.src([
+    'app/scripts/particles.js',
+    'app/scripts/typed.min.js',
+    'app/scripts/materialize.js',
+    'app/scripts/*.js'
+    ])
+    .pipe($.uglify())
+    .pipe($.concat('scripts.min.js'))
+    .pipe(gulp.dest('.tmp/scripts'))
     .pipe(gulp.dest('dist/scripts'))
     .pipe($.size({title: 'js'}));
 });
@@ -98,10 +105,13 @@ gulp.task('styles', function () {
       precision: 10,
       onError: console.error.bind(console, 'Sass error:')
     }))
+    
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-    .pipe(gulp.dest('.tmp/styles'))
+    .pipe($.minifyCss())
     // Concatenate And Minify Styles
-    .pipe($.if('*.css', $.csso()))
+    // .pipe($.if('*.css', $.csso()))
+    .pipe($.concat('styles.min.css'))
+    .pipe(gulp.dest('.tmp/styles'))
     .pipe(gulp.dest('dist/styles'))
     .pipe($.size({title: 'styles'}));
 });
@@ -145,7 +155,7 @@ gulp.task('html', function () {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['styles', 'js'], function () {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -159,7 +169,7 @@ gulp.task('serve', ['styles'], function () {
 
   gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.js'], ['jshint', 'js', reload]);
   gulp.watch(['app/images/**/*'], reload);
 });
 

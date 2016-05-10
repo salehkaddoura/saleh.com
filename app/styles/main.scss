@@ -1,82 +1,37 @@
 @charset "UTF-8";
 
-// Mixins
-@import "components/prefixer";
 @import "components/mixins";
 @import "components/color";
-
-// Variables;
 @import "components/variables";
-
-// Reset
 @import "components/normalize";
-
-// components
 @import "components/global";
-@import "components/grid";
-@import "components/navbar";
-@import "components/roboto";
-@import "components/typography";
-@import "components/cards";
-@import "components/toast";
-@import "components/tabs";
-@import "components/tooltip";
+@import "components/prefixer";
+
 @import "components/buttons";
-@import "components/dropdown";
-@import "components/waves";
-@import "components/modal";
-@import "components/collapsible";
+@import "components/cards";
 @import "components/chips";
+@import "components/collapsible";
+@import "components/dropdown";
+@import "components/grid";
 @import "components/materialbox";
-@import "components/form";
-@import "components/table_of_contents";
+@import "components/navbar";
 @import "components/sideNav";
-@import "components/preloader";
-@import "components/slider";
-@import "components/date_picker/default.scss";
-@import "components/date_picker/default.date.scss";
-@import "components/date_picker/default.time.scss";
-
-@font-face {
-    font-family: "Roboto";
-    src: url('/fonts/Roboto-Thin.ttf');
-    font-weight: 200;
-}
-@font-face {
-    font-family: "Roboto";
-    src: url('/fonts/Roboto-Light.ttf');
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url('/fonts/Roboto-Regular.ttf');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url('/fonts/Roboto-Medium.ttf');
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: "Roboto";
-    src: url('/fonts/Roboto-Bold.ttf');
-    font-weight: 700;
-}
+@import "components/typography";
+@import "components/waves";
 
 
 // GENERAL CSS --------------------------------------------
 // ---------------------------------------------------------
-html,body{ 
-    width:100%;
-    height:100%;
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-.page-container {
-    position: relative;
-    height: 100%;
+html, body {  
+    width:100%;
+    height:100%;
+    font-family: 'Roboto';
 }
 
 .navbar-fixed {
@@ -89,19 +44,19 @@ nav {
     
     .brand-logo {
         font-family: 'Roboto';
-        font-weight: 200;
+        font-weight: 300;
     }
 
     ul a {
         font-family: 'Roboto';
-        font-weight: 200;
+        font-weight: 300;
         text-transform: uppercase;
     }
 }
 
 // PARTICLE.JS
 //remove canvas default margin */
-canvas{
+canvas {
     display:block;
     vertical-align:bottom;
 }
@@ -124,6 +79,7 @@ canvas{
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
 }
+
 @keyframes blink{
     0% { opacity:1; }
     50% { opacity:0; }
@@ -140,53 +96,63 @@ canvas{
     100% { opacity:1; }
 }
 
-// .devicons-aws:before{content:"\e6ad"};
 
 // HOMEPAGE CSS --------------------------------------------
 // ---------------------------------------------------------
+.page-container {
+    position: relative;
+}
+
 .home-container {
-    height: 100%;
     width: 100%;
+    min-height: 700px;
     display: table;
     position: relative;
-    background: url('/images/wallpaper-2433075.jpg') no-repeat center center;
-    // -webkit-transform: translate3d(0,0,0);
+    background: url('/images/calvin.jpg') no-repeat center 20%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    z-index: 5;
-
-    h1, h5 {
-        color: #FFF;
-        font-family: 'Roboto';
-        font-weight: 300;
-    }
-
-    h1 {
-        margin: 0;
-    }
-
-    h5 {
-        font-weight: 200;
-    }
-
 }
 
-
-.header-row {
-    margin-bottom: 10px;
+.lift-text {
+    margin-top: -35px !important;
 }
 
-.social-row {
+.show-text {
+    opacity: 1 !important;
+}
+
+.header-container--h1 {
+    font-family: 'Roboto';
+    font-weight: 400;
+    text-align: center;
+    color: #FFF;
+    margin: 0 0 5px 0;
+    transition: margin 0.5s linear;
+}
+
+.header-container--p {
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: 24px;
+    text-align: center;
+    color: #FFF;
+    margin: 0 0 10px 0;
+    opacity: 0;
+    transition: opacity 0.25s linear;
+}
+
+.social-container {
     position: absolute;
     bottom: 20px;
     left: 0;
     right: 0;
+    text-align: center;
 }
 
-.social-icons a {
-    color: #FFF;
+.social-container--icon {
+    color: #27ae60;
 
     i:hover {
         -moz-transform: scale(1.2);
@@ -196,30 +162,47 @@ canvas{
     }
 }
 
+.tools-container {
+    width: 100%;
+    min-height: 200px;
+    padding: 5% 0;
+}
 
-.developer-icons {
-    h4 {
-        color: #FFF;
-        font-weight: 200;
-    }
+.tools-container--row {
+    margin: 0;
+}
 
-    .stack {
-        display: inline-block;
-        margin: auto 15px;
-    }
+.icons-container {
+    text-align: center;
 
-    .stack span {
-        font-size: 3em;
-        display: block;
-        color: #FFF;    
-    }
-
-    p {
-        font-size: 20px;
-        color: #FFF;
-        font-weight: 200;
+    span {
+        margin: 0 auto;
     }
 }
+
+.devicons {
+    font-size: 4em;
+}
+
+.projects-container {
+    width: 100%;
+    height: 600px;
+    background: url('/images/wallpaper-966796.jpg') no-repeat center 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
 
 .sk-about {
     font-size: 20px;
@@ -229,7 +212,7 @@ canvas{
     padding: 0 30px;
 }
 
-.fp-tablecell {
+.tablecell {
     display: table-cell;
     vertical-align: middle;
     position: relative;
@@ -254,6 +237,7 @@ canvas{
         left: 0;
         background-color: #FFF;
         background: url('/images/wallpaper-966796.jpg') no-repeat center center;
+        
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -281,7 +265,7 @@ canvas{
     color: #FFF;
     padding-bottom: 10px;
     border-bottom: 1px solid white;
-    font-weight: 200;
+    font-weight: 300;
     text-transform: uppercase;
 }
 
