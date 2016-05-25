@@ -19,63 +19,109 @@ function lift(){
 }
 
 particlesJS('particles-js', {
-  particles: {
-    color: '#fff',
-    color_random: false,
-    shape: 'circle', // "circle", "edge" or "triangle"
-    opacity: {
-      opacity: 1,
-      anim: {
-        enable: true,
-        speed: 1.5,
-        opacity_min: 0,
-        sync: false
+  "particles": {
+    "number": {
+      "value": 160,
+      "density": {
+        "enable": true,
+        "value_area": 800
       }
     },
-    size: 4,
-    size_random: true,
-    nb: 250,
-    line_linked: {
-      enable_auto: true,
-      distance: 100,
-      color: '#fff',
-      opacity: 1,
-      width: 1,
-      condensed_mode: {
-        enable: false,
-        rotateX: 600,
-        rotateY: 600
-      }
+    "color": {
+      "value": "#ffffff"
     },
-    anim: {
-      enable: true,
-      speed: 1
-    }
-  },
-  interactivity: {
-    enable: false,
-    mouse: {
-      distance: 300
-    },
-    detect_on: 'canvas', // "canvas" or "window"
-    mode: 'grab', // "grab" or false
-    line_linked: {
-      opacity: 0.5
-    },
-    events: {
-      onclick: {
-        enable: false,
-        mode: 'push', // "push" or "remove"
-        nb: 4
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
       },
-      onresize: {
-        enable: true,
-        mode: 'bounce', // "out" or "bounce"
-        density_auto: true
-        // density_area: 800 // nb_particles = particles.nb * (canvas width *  canvas height / 1000) / density_area
+      "polygon": {
+        "nb_sides": 5
+      }
+    },
+    "opacity": {
+      "value": 1,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 1,
+        "opacity_min": 0,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 4,
+        "size_min": 0.3,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 50,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 1,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 600
       }
     }
   },
-  /* Retina Display Support */
-  retina_detect: true
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": false,
+        "mode": "grab"
+      },
+      "onclick": {
+        "enable": false,
+        "mode": "repulse"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 400,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 250,
+        "size": 0,
+        "duration": 2,
+        "opacity": 0,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 400,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+}, function() {
+  console.log('# hola');
 });
