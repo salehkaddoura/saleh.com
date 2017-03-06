@@ -29,30 +29,9 @@
 }
 
 html, body {  
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     font-family: 'Roboto';
-
-}
-
-.navbar-fixed {
-    position: fixed;
-}
-
-nav {
-    background: transparent;
-    box-shadow: none;
-    
-    .brand-logo {
-        font-family: 'Roboto';
-        font-weight: 300;
-    }
-
-    ul a {
-        font-family: 'Roboto';
-        font-weight: 300;
-        text-transform: uppercase;
-    }
 }
 
 // PARTICLE.JS
@@ -98,6 +77,65 @@ canvas {
 }
 
 
+
+.sk__page__container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    background: url('/images/ignasi_pattern_s.png') repeat;
+}
+
+.sk__page__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 40px 10px 10px;
+
+    > img {
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;    
+    }
+
+    &__info {
+        width: 800px;
+        padding: 20px 0 20px 50px;
+
+        hr {
+            border: none;
+            height: 4px;
+            max-width: 60px;
+            margin: 10px 0 10px 0;
+            background: black;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        p:first-child {
+            font-size: 48px;
+        }
+
+        p:last-child {
+            font-size: 24px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 // HOMEPAGE CSS --------------------------------------------
 // ---------------------------------------------------------
 .page-container {
@@ -110,7 +148,7 @@ canvas {
     min-height: 700px;
     display: table;
     position: relative;
-    background: url('/images/test3.jpg') no-repeat center 5%;
+    background: url('/images/polygon.jpg') no-repeat center 5%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

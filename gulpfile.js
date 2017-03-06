@@ -107,7 +107,7 @@ gulp.task('styles', function () {
     }))
     
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-    .pipe($.minifyCss())
+    .pipe($.cleanCss())
     // Concatenate And Minify Styles
     // .pipe($.if('*.css', $.csso()))
     .pipe($.concat('styles.min.css'))
@@ -118,10 +118,10 @@ gulp.task('styles', function () {
 
 // Scan Your HTML For Assets & Optimize Them
 gulp.task('html', function () {
-  var assets = $.useref.assets({searchPath: '{.tmp,app}'});
+  // var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
   return gulp.src('app/**/*.html')
-    .pipe(assets)
+    .pipe($.useref({searchPath: '{.tmp,app}'}))
     // Concatenate And Minify JavaScript
     .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
     // Remove Any Unused CSS
@@ -140,7 +140,6 @@ gulp.task('html', function () {
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.csso()))
-    .pipe(assets.restore())
     .pipe($.useref())
     // Update Production Style Guide Paths
     .pipe($.replace('components/components.css', 'components/main.min.css'))

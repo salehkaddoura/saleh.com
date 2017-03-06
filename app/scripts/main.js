@@ -9,7 +9,7 @@ $("#typed").typed({
     typeSpeed: 40,
     startDelay: 2000,
     callback: function() {
-        lift();
+        // lift();
     }
 });
 
