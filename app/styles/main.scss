@@ -60,7 +60,7 @@ canvas {
 
 .sk__page__container {
     margin: 0 auto;
-    max-width: 50%;
+    max-width: 45%;
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
@@ -94,11 +94,12 @@ canvas {
         }
 
         p:first-child {
-            font-size: 38px;
+            font-size: 52px;
         }
 
         p:last-child {
-            font-size: 19px;
+            font-size: 26px;
+            line-height: 1.4;
             font-weight: 300;
         }
     }
@@ -110,33 +111,21 @@ canvas {
     }
 
     p:first-child {
-        font-size: 26px;
+        font-size: 2.5rem;
         margin-bottom: 10px;
     }
 
     p:last-child {
-        font-size: 16px;
+        font-size: 22px;
+        line-height: 1.4;
         font-weight: 300;
     }
 }
 
 .sk__page__toolbelt {
-    .row {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-     
-    .toolbelt__tooltip:first-child {
-        padding-left: 0;
-    }
-
-    .toolbelt__tooltip:last-child {
-        padding-right: 0;
-    }
-
     p {
         margin: 0 0 10px 0;
-        font-size: 26px
+        font-size: 2.5rem;
     }
 }
 
@@ -145,7 +134,7 @@ canvas {
 }
 
 .toolbelt__tooltip {
-    padding: 0 5px;
+    // padding: 0 5px;
     text-align: center;
 
     span:first-child {
@@ -154,7 +143,7 @@ canvas {
     }
 
     > .devicons {
-        font-size: 3.5em;
+        font-size: 4.5em;
     }
 }
 
@@ -322,18 +311,35 @@ canvas {
 
     .sk__page__about {
         margin-top: 20px;
+
+        p:first-child {
+            font-size: 1.3rem;
+        }
+
+        p:last-child {
+            font-size: 16px;
+        }
     }
 
     .sk__page__toolbelt {
         margin-top: 20px;
 
+        .row {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
         p {
-            margin-bottom: 5px;
+            font-size: 1.3rem;
         }
     }
 
     .sk__page__projects {
         margin-top: 20px;
+
+        p:first-child {
+            font-size: 1.3rem;
+        }
     }
 
     .toolbelt__tooltip {
@@ -347,9 +353,52 @@ canvas {
     }
 }
 
-@media only screen and (min-device-width: 1024px) and (max-device-width: 1200px) {
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1440px) {
     .sk__page__container {
         max-width: 70%;
+    }
+
+    .sk__page__header__info {
+        p:first-child {
+            font-size: 46px;
+        }
+
+        p:last-child {
+            font-size: 24px;
+        }
+    }
+
+    .sk__page__header {
+        img {
+            float: none;
+            margin: 0 auto;
+            display: block;
+            width: 75%;
+        }
+    }
+
+    .sk__page__about {
+        p:first-child {
+            font-size: 2.2rem;
+        }
+
+        p:last-child {
+            font-size: 20px;
+        }
+    }
+
+    .sk__page__toolbelt {
+        p {
+            font-size: 2.2rem;
+        }
+    }
+
+    .toolbelt__tooltip > .devicons {
+        font-size: 3.2em;
+    }
+
+    .sk__page__projects > p {
+        font-size: 2.2rem;
     }
 }
 
@@ -369,12 +418,28 @@ canvas {
         }
 
         &__info {
-            margin-top: 10px;
+            margin-top: 20px;
+
+            p:first-child {
+                font-size: 40px;
+            }
+
+            p:last-child {
+                font-size: 22px;
+            }
         }
     }
 
     .sk__page__about {
         margin-top: 20px;
+
+        p:first-child {
+            font-size: 2.2rem;
+        }
+
+        p:last-child {
+            font-size: 18px;
+        }
     }
 
     .sk__page__toolbelt {
@@ -390,19 +455,6 @@ canvas {
         margin-top: 20px;
     }
 }
-
-// @media (min-width: 1200px) {
-//     .sk__page__container {
-//         max-width: 1170px;
-//     }
-// }
-
-// @media (min-width: 992px) {
-//     .sk__page__container {
-//         max-width: 970px;
-//     }
-// }
-
 
 
 
