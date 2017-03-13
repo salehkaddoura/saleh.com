@@ -124,7 +124,7 @@ canvas {
 
 .sk__page__toolbelt {
     p {
-        margin: 0 0 10px 0;
+        margin: 0;
         font-size: 2.5rem;
     }
 }
@@ -134,7 +134,7 @@ canvas {
 }
 
 .toolbelt__tooltip {
-    // padding: 0 5px;
+    margin-top: 10px;
     text-align: center;
 
     span:first-child {
