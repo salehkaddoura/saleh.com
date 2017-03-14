@@ -74,9 +74,9 @@ canvas {
     align-items: center;
 
     img {
-        float: right;
+        margin: 0 auto;
+        display: block;
         width: 70%;
-        margin-right: 20px;
         border-radius: 100%;    
     }
 
@@ -85,19 +85,20 @@ canvas {
             border: none;
             height: 2px;
             max-width: 60px;
-            margin: 10px 0 10px 0;
-            background: black;
+            margin: 10px 0;
+            background: #bdc3c7;
         }
 
         p {
             margin: 0;
+            color: #34495e;
         }
 
         p:first-child {
             font-size: 52px;
         }
 
-        p:last-child {
+        p:nth-child(3) {
             font-size: 26px;
             line-height: 1.4;
             font-weight: 300;
@@ -105,14 +106,43 @@ canvas {
     }
 }
 
+.sk__page__social {
+    margin-top: 10px;
+
+    .sk__page__social--icon {
+        text-decoration: none;
+
+        span {
+            font-size: 35px;
+            color: #34495e;
+        }
+
+        span:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.sk__page__social--icon:not(.github__icon) {
+    margin-left: 10px;
+}
+
 .sk__page__about {
+    hr {
+        border: none;
+        height: 2px;
+        max-width: 60px;
+        margin: 10px 0;
+        background: #bdc3c7;
+    }
+
     p {
         margin: 0;
+        color: #34495e;
     }
 
     p:first-child {
         font-size: 2.5rem;
-        margin-bottom: 10px;
     }
 
     p:last-child {
@@ -123,9 +153,18 @@ canvas {
 }
 
 .sk__page__toolbelt {
+    hr {
+        border: none;
+        height: 2px;
+        max-width: 60px;
+        margin: 10px 0 0 0;
+        background: #bdc3c7;
+    }
+
     p {
         margin: 0;
         font-size: 2.5rem;
+        color: #34495e;
     }
 }
 
@@ -136,6 +175,7 @@ canvas {
 .toolbelt__tooltip {
     margin-top: 10px;
     text-align: center;
+    color: #34495e;
 
     span:first-child {
         font-size: 12px;
@@ -148,9 +188,18 @@ canvas {
 }
 
 .sk__page__projects {
+    hr {
+        border: none;
+        height: 2px;
+        max-width: 60px;
+        margin: 10px 0;
+        background: #bdc3c7;
+    }
+
     > p {
-        margin: 0 0 10px 0;
-        font-size: 26px;
+        margin: 0;
+        font-size: 2.5rem;
+        color: #34495e;
     }
 }
 
@@ -278,6 +327,10 @@ canvas {
         line-height: 1px;
         font-size: 18px;
     }
+}
+
+.linkedin__icon {
+    color: #2980b9;
 }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
