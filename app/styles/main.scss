@@ -60,6 +60,8 @@ canvas {
 
 .sk__page__container {
     margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 5px;
     max-width: 45%;
     display: flex;
     flex: 1 1 auto;
@@ -108,6 +110,7 @@ canvas {
 
 .sk__page__social {
     margin-top: 10px;
+    display: flex;
 
     .sk__page__social--icon {
         text-decoration: none;
@@ -119,6 +122,10 @@ canvas {
 
         span:hover {
             transform: scale(1.2);
+        }
+
+        .email__icon {
+            margin-top: -1px;
         }
     }
 }
@@ -397,7 +404,7 @@ canvas {
 
     .toolbelt__tooltip {
         > .devicons {
-            font-size: 2em;
+            font-size: 2.5em;
         }
         
         span:first-child {
@@ -432,7 +439,7 @@ canvas {
             float: none;
             margin: 0 auto;
             display: block;
-            width: 75%;
+            width: 70%;
         }
     }
 
@@ -467,8 +474,6 @@ canvas {
     }
 
     .sk__page__header {
-        margin-top: 40px;
-
         img {
             margin: 0 auto;
             display: block;
@@ -512,6 +517,10 @@ canvas {
 
     .sk__page__projects {
         margin-top: 20px;
+    }
+
+    .sk__card__footer {
+        margin-bottom: 10px;
     }
 }
 
