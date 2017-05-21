@@ -45,7 +45,7 @@
     "run-sequence": "1.0.1"
   },
   "engines": {
-    "npm": "7.4.x",
-    "node": "4.0.x"
+    "node": "7.4.x",
+    "npm": "4.0.x"
   }
 }
