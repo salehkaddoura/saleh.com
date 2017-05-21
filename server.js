@@ -18,13 +18,13 @@ if ('development' === app.get('env')) {
 if ('production' === app.get('env')) {
   app.use(express.static(__dirname + '/dist'));
 
-  app.use(function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] !== 'https') {
-      res.redirect('https://' + req.headers.host + req.url);
-    } else {
-      next(); /* Continue to other routes if we're not redirecting */
-    }
-  });
+  // app.use(function(req, res, next) {
+  //   if (req.headers['x-forwarded-proto'] !== 'https') {
+  //     res.redirect('https://' + req.headers.host + req.url);
+  //   } else {
+  //     next(); /* Continue to other routes if we're not redirecting */
+  //   }
+  // });
 }
 
 app.get('/', function(req, res) {
