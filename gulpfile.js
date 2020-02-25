@@ -153,8 +153,8 @@ gulp.task('serve', gulp.series('styles', 'js', function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', gulp.series('clean', function (cb) {
-  // runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'js', 'copy'], cb);
-  runSequence('styles', ['jshint', 'html', 'fonts', 'js', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'js', 'copy'], cb);
+  // runSequence('styles', ['jshint', 'html', 'fonts', 'js', 'copy'], cb);
 }));
 
 // Build and serve the output from the dist build
@@ -169,7 +169,6 @@ gulp.task('serve:dist', gulp.series('default', function () {
     server: 'dist'
   });
 }));
-
 
 // Run PageSpeed Insights
 gulp.task('pagespeed', function (cb) {
