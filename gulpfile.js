@@ -4,7 +4,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var del = require('del');
-var runSequence = require('run-sequence');
+const runSequence = require('gulp4-run-sequence');
 var browserSync = require('browser-sync');
 var pagespeed = require('psi');
 var reload = browserSync.reload;
@@ -63,7 +63,6 @@ gulp.task('js', function() {
   return gulp.src([
     'app/scripts/particles.js',
     'app/scripts/typed.min.js',
-    'app/scripts/materialize.js',
     'app/scripts/*.js'
     ])
     .pipe($.uglify())
@@ -85,7 +84,7 @@ gulp.task('styles', function () {
       precision: 10,
       onError: console.error.bind(console, 'Sass error:')
     }))
-    
+
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
     .pipe($.cleanCss())
     // Concatenate And Minify Styles
@@ -134,7 +133,7 @@ gulp.task('html', function () {
 gulp.task('clean', del.bind(null, ['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
 
 // Watch Files For Changes & Reload
-gulp.task('serve', ['styles', 'js'], function () {
+gulp.task('serve', gulp.series('styles', 'js', function () {
   browserSync({
     notify: false,
     // Customize the BrowserSync console logging prefix
@@ -150,10 +149,16 @@ gulp.task('serve', ['styles', 'js'], function () {
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['jshint', 'js', reload]);
   gulp.watch(['app/images/**/*'], reload);
-});
+}));
+
+// Build Production Files, the Default Task
+gulp.task('default', gulp.series('clean', function (cb) {
+  // runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'js', 'copy'], cb);
+  runSequence('styles', ['jshint', 'html', 'fonts', 'js', 'copy'], cb);
+}));
 
 // Build and serve the output from the dist build
-gulp.task('serve:dist', ['default'], function () {
+gulp.task('serve:dist', gulp.series('default', function () {
   browserSync({
     notify: false,
     logPrefix: 'WSK',
@@ -163,13 +168,8 @@ gulp.task('serve:dist', ['default'], function () {
     // https: true,
     server: 'dist'
   });
-});
+}));
 
-// Build Production Files, the Default Task
-gulp.task('default', ['clean'], function (cb) {
-  // runSequence('styles', ['jshint', 'html', 'images', 'fonts', 'js', 'copy'], cb);
-  runSequence('styles', ['jshint', 'html', 'fonts', 'js', 'copy'], cb);
-});
 
 // Run PageSpeed Insights
 gulp.task('pagespeed', function (cb) {
