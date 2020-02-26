@@ -10,27 +10,14 @@ app.set('view engine', 'html');
 app.engine('html', require('hbs').__express);
 
 if ('development' === app.get('env')) {
-  // app.use(function(req, res, next) {
-  //   console.log('here', req.headers.host);
-  //   console.log(req.url)
-  //   // if (req.headers['x-forwarded-proto'] !== 'https') {
-  //   //   console.log('req.headers', req.headers);
-  //   //   console.log('url', req.url);
-  //   //   res.redirect('https://' + req.headers.host + req.url);
-  //   // } else {
-  //   //   next(); /* Continue to other routes if we're not redirecting */
-  //   // }
-  //   next();
-  // });
-    app.use(errorHandler());
-    app.use(express.static(__dirname + '/app'));
-    app.use(express.static(__dirname + '/.tmp'));
+  app.use(errorHandler());
+  app.use(express.static(__dirname + '/app'));
+  app.use(express.static(__dirname + '/.tmp'));
 }
 
 if ('production' === app.get('env')) {
   app.use(function(req, res, next) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
-      console.log(1 + '   https://' + req.headers.host + req.url);
       res.redirect('https://' + req.headers.host + req.url);
     } else {
       next(); /* Continue to other routes if we're not redirecting */
