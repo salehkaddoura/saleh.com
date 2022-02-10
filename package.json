@@ -39,7 +39,7 @@
     "jshint": "2.11.0",
     "jshint-stylish": "2.2.1",
     "newrelic": "6.4.1",
-    "node-sass": "4.13.1",
+    "node-sass": "7.0.0",
     "opn": "6.0.0",
     "psi": "4.0.1",
     "require-dir": "1.2.0",
